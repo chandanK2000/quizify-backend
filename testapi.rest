@@ -1,0 +1,259 @@
+# POST /api/users/register
+
+POST http://localhost:4000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "rajat",
+  "email": "rajat@example.com",
+  "password": "rajat",
+  "confirmPassword": "rajat",
+  "mobile": "12345675110"
+  
+}
+
+//this api is for all the users
+###
+GET http://localhost:4000/api/users
+
+//get single user details
+#  http://localhost:4000/api/users/:id
+###
+GET http://localhost:4000/api/users/66631f0601483abd1e7a3289
+
+
+//Delete user 
+# DELETE /api/users/:id
+###
+DELETE http://localhost:4000/api/users/666014026d3259fbaefeb4b1
+
+###
+# POST /api/users/login
+POST http://localhost:4000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "siyaramsir@example.com",
+  "password": "siyaramsir"
+}
+
+
+//update the user details
+
+# PUT /api/users/:id
+###
+PUT http://localhost:4000/api/users/6662d192cec8e526a638ee40
+Content-Type: application/json
+
+{
+  "name": "amit yadav",
+  "email": "rajatkumar@example.com",
+  "password": "ratanbhaifsf",
+  "mobile": "987654125",
+  "image": "/uploads/newprofile.jpg",
+  "address": "punjab",
+  "bio": "he is a good boy",
+  "profession":"Developer",
+  "state":"up",
+  "gender":"m"
+
+}
+
+
+
+
+//admin register 
+
+# POST /api/admin/register
+###
+POST http://localhost:4000/api/admin/register
+Content-Type: application/json
+
+{
+  "name": "amit",
+  "email": "sdfsd@gmail.com",
+  "password": "adminPassword",
+  "mobile": "1234567890"
+}
+
+
+//get all admins
+###
+GET http://localhost:4000/api/admin
+
+//delete user authority
+
+# DELETE /api/admin/admin/:id
+###
+DELETE http://localhost:4000/api/admin/users/6654ce72a11c10cc02011024
+
+
+
+//update admin details
+
+# PUT /api/users/:id
+###
+
+PUT http://localhost:4000/api/admin/admins/6654d082e0fd4248f6d98b1e
+Content-Type: application/json
+
+{
+  "name": "amitabh",
+  "email": "amitabh@example.com",
+  "password": "newpassword",
+  "mobile": "9876543214",
+  "profileImage": "/uploads/newprofile.jpg",
+  "address": "punjab",
+  "bio": "Amitabh bachan is a very great actor of India.thay give 100+ films"
+}
+
+
+// for the quesiton 
+###
+POST http://localhost:4000/api/questions
+Content-Type: application/json
+
+{
+  "subjectName": "javascript",
+  "quizSet": "set3",
+  "question": "Which CSS property is used to align text?",
+  "options": [
+    "text-align",
+    "color",
+    "background-color",
+    "font-size"
+  ],
+  "answer": "text-align"
+}
+
+
+//get questions
+
+###
+GET http://localhost:4000/api/questions/html/set2
+
+
+# GET http://localhost:4000/api/questions/:subjectName/:quizSet
+
+### Save Quiz Result
+POST http://localhost:4000/api/quizResults
+Content-Type: application/json
+
+{
+  "userId": "665f4f1f9e43e4eb8ea52551",
+  "subjectName": "css",
+  "quizSet": "set3",
+  "totalQuestions": 10,
+  "wrongAnswers": 2,
+  "correctAnswers": 8,
+  "resultMessage": "Good job!",
+  "percentageScore": 80,
+  "dateTime": "2024-06-03T10:00:00Z",
+  "name": "John Doe",
+  "email": "johndoe@example.com"
+}
+
+###
+GET http://localhost:4000/api/quizResults
+
+###
+GET http://localhost:4000/api/quizResults/html/Set1
+
+
+# Get All Quiz Results for a User
+###
+2GET http://localhost:4000/api/quizResults?userId=665f4f1f9e43e4eb8ea52551
+
+
+#Get Quiz Results by Subject and Set for a User
+###
+http://localhost:4000/api/quizResults/html/set1?userId=665f4f1f9e43e4eb8ea52551
+
+
+
+//for the delete quiz history sir
+// http://localhost:3000/quiz-results?userId=123&subjectName=math&quizSet=set1
+###
+DELETE http://localhost:4000/api/quizResults?userId=665f4f1f9e43e4eb8ea52551&subjectName=html&quizSet=set1
+
+
+
+
+//for interviews questions
+// this api is for the post request
+###
+POST http://localhost:4000/api/interviews
+Content-Type: application/json
+
+{
+  "subject": "javascript",
+  "questions": [
+   {
+"question": "What is an event in JavaScript?",
+"answer": "An event in JavaScript is an action or occurrence that happens as a result of user interaction, browser manipulation, or system events. Examples of events include clicking a button, submitting a form, hovering over an element, pressing a key, and loading a web page. JavaScript can listen for these events and execute code in response, enabling dynamic and interactive web experiences."
+},
+{
+"question": "What is the DOM?",
+"answer": "The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a tree of objects, where each object represents a part of the document (e.g., elements, attributes, text). The DOM allows JavaScript to interact with the content and structure of web pages dynamically. Developers can use DOM methods and properties to modify the document's structure, content, and styles in response to user actions or other events."
+},
+{
+"question": "What is JavaScript?",
+"answer": "JavaScript is a high-level, interpreted programming language used to create dynamic and interactive websites. It is commonly used for client-side web development, allowing developers to add interactivity, animations, and other dynamic features to web pages. JavaScript is also used for server-side development (Node.js), mobile app development, game development, and more."
+},
+{
+"question": "What are the key features of JavaScript?",
+"answer": "Some key features of JavaScript include: 1. Dynamic typing: Variables can hold values of any data type without explicitly specifying the data type. 2. Prototypal inheritance: Objects can inherit properties and methods from other objects. 3. First-class functions: Functions are treated as first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned from other functions. 4. Closures: Functions can access variables from their containing scope even after the scope has closed."
+},
+{
+"question": "What are the different data types in JavaScript?",
+"answer": "JavaScript has six primitive data types: 1. Number: Represents both integer and floating-point numbers. 2. String: Represents a sequence of characters enclosed in single or double quotes. 3. Boolean: Represents true or false values. 4. Null: Represents the intentional absence of any object value. 5. Undefined: Represents a variable that has been declared but not assigned a value. 6. Symbol (ES6): Represents a unique identifier. JavaScript also has one non-primitive data type: Object: Represents a collection of key-value pairs."
+},
+{
+"question": "What is the DOM?",
+"answer": "The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a tree of objects, where each object represents a part of the document (e.g., elements, attributes, text). The DOM allows JavaScript to interact with the content and structure of web pages dynamically. Developers can use DOM methods and properties to modify the document's structure, content, and styles in response to user actions or other events."
+}
+  ]
+}
+
+
+//this api for the get request
+###
+GET http://localhost:4000/api/interviews/css
+
+
+
+
+//demo booking
+###
+POST http://localhost:4000/api/bookings
+Content-Type: application/json
+
+{
+  "name": "rajesh Doe",
+  "email": "rajesh@example.com",
+  "mobile": "432453464",
+  "skillCenter": "Example Skill Center",
+  "course": "mernstack Course",
+  "coursetype": "online",
+  "message": "This is also test booking."
+}
+
+//get all book demo
+
+###
+Get  http://localhost:4000/api/bookings
+
+//get single
+###
+Get  http://localhost:4000/api/bookings/66630f023b84beb07c16d8a6
+
+
+//delete  all bookings
+###
+Delete  http://localhost:4000/api/bookings
+
+
+
+//delete single bookings
+###
+Delete  http://localhost:4000/api/bookings/66631289c834716eaf7eec57
