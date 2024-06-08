@@ -36,6 +36,10 @@ mongoose.connect(DB, {
   console.error("Database connection failed:", error);
 });
 
+app.get('/', (req, res) => {
+  res.send('Server is up!');
+})
+
 app.use('/api/questions', questionRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/quizResults', quizResultRoutes);
