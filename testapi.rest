@@ -114,16 +114,16 @@ POST http://localhost:4000/api/questions
 Content-Type: application/json
 
 {
-  "subjectName": "javascript",
-  "quizSet": "set3",
-  "question": "Which CSS property is used to align text?",
+  "subjectName": "html",
+  "quizSet": "set2",
+  "question": "What does HTML stand for?",
   "options": [
-    "text-align",
-    "color",
-    "background-color",
-    "font-size"
+    "Hyper Text Markup Language",
+    "Hyperlinks and Text Markup Language",
+    "Home Tool Markup Language",
+    "Hyperlinks and Tables Markup Language"
   ],
-  "answer": "text-align"
+  "answer": "Hyper Text Markup Language"
 }
 
 
